@@ -27,31 +27,31 @@ fi
 
 2. Start ZooKeeper  --> Note its shell script so it should be exeuted as ./ if from same folder else use /etc
 
- bin/zookeeper-server-start.sh config/zookeeper.properties
+ sudo bin/zookeeper-server-start.sh config/zookeeper.properties
 
 
 3. Start Kafka Cluster
 
-bin/kafka-server-start.sh config/server.properties
+sudo bin/kafka-server-start.sh config/server.properties
 
 
 3. Create Topic -- Optional but can be done at runtime
 
-bin/kafka-topics.sh --create --zookeeper localhost:2180 --replication-factor 1 --partition 1 --topic truckevent
+sudo bin/kafka-topics.sh --create --zookeeper localhost:2180 --replication-factor 1 --partition 1 --topic truckevent
 
 We can now see that topic if we run the list topic command:
 
-> bin/kafka-list-topic.sh --zookeeper localhost:2180
+> sudo bin/kafka-list-topic.sh --zookeeper localhost:2180
 
 
 4. Produce message
 
-bin/kafka-console-producer.sh --broker-list localhost:9092 --topic truckevent
+sudo bin/kafka-console-producer.sh --broker-list localhost:9092 --topic truckevent
 
 
 5. Consume message
 
-bin/kafka-console-consumer.sh --zookeeper localhost:2180 --topic treuckevent --from-beginning
+sudo bin/kafka-console-consumer.sh --zookeeper localhost:2180 --topic treuckevent --from-beginning
 
 ---------------------------------Instructions to execute Kafka Tutorial-------------------------------------------
 n Apache Kafka introduction we discussed some key features of Kafka. In this tutorial we will setup a small Kafka cluster. We will send messages to a topic using a JAVA producer. We will consume the messages using a JAVA consumer.
