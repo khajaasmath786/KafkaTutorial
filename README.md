@@ -23,12 +23,14 @@ if [ -z "$KAFKA_JVM_PERFORMANCE_OPTS" ]; then
   KAFKA_JVM_PERFORMANCE_OPTS="-server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSScavengeBeforeRemark -XX:+DisableExplicitGC -Djava.awt.headless=true"
 fi
 
-1. Start ZooKeeper  --> Note its shell script so it should be exeuted as ./ if from same folder else use /etc
+1. Go to installaton folder of Kafka and then follow below scripts.
+
+2. Start ZooKeeper  --> Note its shell script so it should be exeuted as ./ if from same folder else use /etc
 
  bin/zookeeper-server-start.sh config/zookeeper.properties
 
 
-2. Start Kafka Cluster
+3. Start Kafka Cluster
 
 bin/kafka-server-start.sh config/server.properties
 
