@@ -8,6 +8,13 @@ No additonal configuration is required
 
 ****kafka/bin/config/server.properties --> this has details of the port that will be used by producer for publishing messages. (9092 port number)
 
+if we get below error follow you tube link below or comment
+
+sudo /usr/lib/kafka/bin/kafka-server-start.sh config/server.properties
+Unrecognized VM option 'UseCompressedOops'
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+
 Youtube : https://www.youtube.com/watch?v=ArUHr3Czx-8 
 
 
