@@ -15,8 +15,13 @@ Unrecognized VM option 'UseCompressedOops'
 Error: Could not create the Java Virtual Machine.
 Error: A fatal exception has occurred. Program will exit.
 
-Youtube : https://www.youtube.com/watch?v=ArUHr3Czx-8 
 
+
+go to bin/kafa-class.sh and remove -XX:+UseCompressedOops and update as below.
+# JVM performance options
+if [ -z "$KAFKA_JVM_PERFORMANCE_OPTS" ]; then
+  KAFKA_JVM_PERFORMANCE_OPTS="-server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSScavengeBeforeRemark -XX:+DisableExplicitGC -Djava.awt.headless=true"
+fi
 
 1. Start ZooKeeper  --> Note its shell script so it should be exeuted as ./ if from same folder else use /etc
 
@@ -60,6 +65,8 @@ For this tutorial you will need
 Zookeeper is required as the Kafka broker uses Zookeeper to store topic configuration and consumer information.
 
 We will setup a 3 node cluster. I will assume you have 3 machines: host1,host2,host3. We will run a Kafka broker on each host. We will run Zookeeper on host1 and host2. You can do this tutorial on one machine, but you will need to change the port numbers to avoid conflict.
+
+Youtube : https://www.youtube.com/watch?v=ArUHr3Czx-8 
 
 Step 1: Download the latest binaries
 
