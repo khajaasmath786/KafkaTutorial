@@ -23,6 +23,9 @@ if [ -z "$KAFKA_JVM_PERFORMANCE_OPTS" ]; then
   KAFKA_JVM_PERFORMANCE_OPTS="-server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSScavengeBeforeRemark -XX:+DisableExplicitGC -Djava.awt.headless=true"
 fi
 
+
+#########################################################
+
 1. Go to installaton folder of Kafka and then follow below scripts.
 
 2. Start ZooKeeper  --> Note its shell script so it should be exeuted as ./ if from same folder else use /etc
@@ -35,7 +38,7 @@ fi
 sudo bin/kafka-server-start.sh config/server.properties
 
 
-3. Create Topic -- Optional but can be done at runtime
+4. Create Topic -- Optional but can be done at runtime
 
 sudo bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partition 1 --topic truckevent
 
@@ -44,15 +47,19 @@ We can now see that topic if we run the list topic command:
 > sudo bin/kafka-list-topic.sh --zookeeper localhost:2181
 
 
-4. Produce message
+5. Produce message 
 
 sudo bin/kafka-console-producer.sh --broker-list localhost:9092 --topic truckevent
 
 
-5. Consume message
+5. Consume message or see if kafka is prodcucing messages.
 
 sudo bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic truckevent --from-beginning
 
+
+
+
+#########################################################
 ---------------------------------Instructions to execute Kafka Tutorial-------------------------------------------
 n Apache Kafka introduction we discussed some key features of Kafka. In this tutorial we will setup a small Kafka cluster. We will send messages to a topic using a JAVA producer. We will consume the messages using a JAVA consumer.
 
