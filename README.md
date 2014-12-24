@@ -27,7 +27,7 @@ fi
 
 2. Start ZooKeeper  --> Note its shell script so it should be exeuted as ./ if from same folder else use /etc
 
- sudo bin/zookeeper-server-start.sh config/zookeeper.properties
+ sudo bin/zkServer.sh restart
 
 
 3. Start Kafka Cluster
