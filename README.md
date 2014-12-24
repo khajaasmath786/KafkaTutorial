@@ -24,7 +24,7 @@ if [ -z "$KAFKA_JVM_PERFORMANCE_OPTS" ]; then
 fi
 
 
-#########################################################
+*********************************************************************************
 
 1. Go to installaton folder of Kafka and then follow below scripts.
 
@@ -59,7 +59,8 @@ sudo bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic truckevent
 
 
 
-#########################################################
+*********************************************************************************
+
 ---------------------------------Instructions to execute Kafka Tutorial-------------------------------------------
 n Apache Kafka introduction we discussed some key features of Kafka. In this tutorial we will setup a small Kafka cluster. We will send messages to a topic using a JAVA producer. We will consume the messages using a JAVA consumer.
 
